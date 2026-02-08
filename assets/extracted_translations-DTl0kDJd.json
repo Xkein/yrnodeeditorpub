@@ -284,6 +284,7 @@
     "SpawnManagerClass": "SpawnManagerClass",
     "SpawnControl": "SpawnControl",
     "SlaveManagerClass": "SlaveManagerClass",
+    "SlaveControl": "SlaveControl",
     "ParticleSystemClass": "ParticleSystemClass",
     "ParticleSystemTypeClass": "ParticleSystemTypeClass",
     "ParticleClass": "ParticleClass",
@@ -1841,8 +1842,11 @@
     "Serialization": {
       "Serialization": "Create Serialization",
       "IsSerializing": "IsSerializing",
+      "IsLoading": "IsLoading",
       "GetCurrentArchivePath": "GetCurrentArchivePath",
-      "GetArchivePath": "GetArchivePath"
+      "GetArchivePath": "GetArchivePath",
+      "LoadKey": "LoadKey",
+      "SaveKey": "SaveKey"
     },
     "BytePalette": {
       "BytePalette": "Create BytePalette",
@@ -8685,6 +8689,15 @@
       "Setm_State": "Set m_State",
       "Getm_LastScanFrame": "Get m_LastScanFrame",
       "Setm_LastScanFrame": "Set m_LastScanFrame"
+    },
+    "SlaveControl": {
+      "SlaveControl": "Create SlaveControl",
+      "Getm_Slave": "Get m_Slave",
+      "Setm_Slave": "Set m_Slave",
+      "Getm_State": "Get m_State",
+      "Setm_State": "Set m_State",
+      "Getm_RespawnTimer": "Get m_RespawnTimer",
+      "Setm_RespawnTimer": "Set m_RespawnTimer"
     },
     "ParticleSystemClass": {
       "ParticleSystemClass": "ParticleSystemClass",
