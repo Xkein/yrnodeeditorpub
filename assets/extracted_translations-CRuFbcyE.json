@@ -21,7 +21,42 @@
     "JsPhysicsEvents": "JsPhysicsEvents",
     "JsEvents": "JsEvents",
     "Input": "Input",
+    "GameplayTag": "GameplayTag",
+    "GameplayTagContainer": "GameplayTagContainer",
+    "GameplayAttributeData": "GameplayAttributeData",
+    "AttributeSet": "AttributeSet",
+    "GameplayAttribute": "GameplayAttribute",
+    "AttributeSetDefine": "AttributeSetDefine",
+    "AttributeMetaData": "AttributeMetaData",
+    "GameplayAbilitySpecHandle": "GameplayAbilitySpecHandle",
+    "AbilitySystemComponent": "AbilitySystemComponent",
+    "ActiveGameplayEffectHandle": "ActiveGameplayEffectHandle",
+    "AbilitySystemComponentType": "AbilitySystemComponentType",
+    "GameplayAbilityDefine": "GameplayAbilityDefine",
+    "GameplayAbility": "GameplayAbility",
+    "GameplayAbilityActorInfo": "GameplayAbilityActorInfo",
+    "GameplayAbilityActivationInfo": "GameplayAbilityActivationInfo",
+    "GameplayEventData": "GameplayEventData",
+    "GameplayAbilityTargetDataHandle": "GameplayAbilityTargetDataHandle",
+    "GameplayAbilityTargetData": "GameplayAbilityTargetData",
+    "GameplayAbilitySpec": "GameplayAbilitySpec",
+    "GameplayEffectComponent": "GameplayEffectComponent",
+    "ActiveGameplayEffectsContainer": "ActiveGameplayEffectsContainer",
+    "GameplayAbilitySpecDef": "GameplayAbilitySpecDef",
+    "GameplayCueNotify_Static": "GameplayCueNotify_Static",
+    "GameplayCueNotify_Actor": "GameplayCueNotify_Actor",
+    "GameplayAbilitySystem": "GameplayAbilitySystem",
+    "QueryVolume": "QueryVolume",
+    "QuerySphere": "QuerySphere",
+    "XkeinTools": "XkeinTools",
     "EPhysicShapeType": "EPhysicShapeType",
+    "EGameplayAbilityInstancingPolicy": "EGameplayAbilityInstancingPolicy",
+    "EGameplayAbilityActivationMode": "EGameplayAbilityActivationMode",
+    "EGameplayAbilityTriggerSource": "EGameplayAbilityTriggerSource",
+    "EGameplayEffectGrantedAbilityRemovePolicy": "EGameplayEffectGrantedAbilityRemovePolicy",
+    "EGameplayAbilityNetExecutionPolicy": "EGameplayAbilityNetExecutionPolicy",
+    "QueryFlags": "QueryFlags",
+    "QueryType": "QueryType",
     "YrExtCore": "YrExtCore",
     "IniReader": "IniReader",
     "IniComponentLoader": "IniComponentLoader",
@@ -57,6 +92,7 @@
     "YrBulletLoadGameEndEvent": "YrBulletLoadGameEndEvent",
     "YrBulletConstructEvent": "YrBulletConstructEvent",
     "YrBulletDetonateEvent": "YrBulletDetonateEvent",
+    "YrBulletSetTargetEvent": "YrBulletSetTargetEvent",
     "YrBulletTypeCtorEvent": "YrBulletTypeCtorEvent",
     "YrBulletTypeDtorEvent": "YrBulletTypeDtorEvent",
     "YrBulletTypeSaveGameBeginEvent": "YrBulletTypeSaveGameBeginEvent",
@@ -149,6 +185,10 @@
     "YrTechnoSelectWeaponEvent": "YrTechnoSelectWeaponEvent",
     "YrTechnoGetFireErrorEvent": "YrTechnoGetFireErrorEvent",
     "YrHookOverrideReturn<FireError>": "YrHookOverrideReturn<FireError>",
+    "YrTechnoSetTargetEvent": "YrTechnoSetTargetEvent",
+    "YrTechnoDestroyedEvent": "YrTechnoDestroyedEvent",
+    "YrTechnoAddPassengerEvent": "YrTechnoAddPassengerEvent",
+    "YrTechnoRemovePassengerEvent": "YrTechnoRemovePassengerEvent",
     "YrTechnoTypeCtorEvent": "YrTechnoTypeCtorEvent",
     "YrTechnoTypeDtorEvent": "YrTechnoTypeDtorEvent",
     "YrTechnoTypeLoadIniEvent": "YrTechnoTypeLoadIniEvent",
@@ -201,7 +241,11 @@
     "YrTerminateEvent": "YrTerminateEvent",
     "YrAfterCreateWindoweEvent": "YrAfterCreateWindoweEvent",
     "YrAfterSetCooperativeLevelEvent": "YrAfterSetCooperativeLevelEvent",
+    "VariantEventPack": "VariantEventPack",
+    "EventPack<unsigned char[99]>": "EventPack<unsigned char[99]>",
+    "NetPackDispatch": "NetPackDispatch",
     "Serialization": "Serialization",
+    "YrHelper": "YrHelper",
     "ESerializationStep": "ESerializationStep",
     "YRpp": "YRpp",
     "BytePalette": "BytePalette",
@@ -816,7 +860,9 @@
     },
     "JsCppHelper": {
       "JsCppHelper": "Create JsCppHelper",
-      "GetEntityByYrObject": "GetEntityByYrObject"
+      "GetEntityByYrObject": "GetEntityByYrObject",
+      "GetPointerValue": "GetPointerValue",
+      "GetArrayBuffer": "GetArrayBuffer"
     },
     "JsEventOnCtor": {
       "JsEventOnCtor": "Create JsEventOnCtor",
@@ -923,6 +969,234 @@
       "Gets_gTouchId": "Get s_gTouchId",
       "Sets_gTouchId": "Set s_gTouchId"
     },
+    "GameplayTag": {
+      "GameplayTag": "Create GameplayTag",
+      "Getm_TagName": "Get m_TagName",
+      "Setm_TagName": "Set m_TagName"
+    },
+    "GameplayTagContainer": {
+      "GameplayTagContainer": "Create GameplayTagContainer",
+      "Getm_GameplayTags": "Get m_GameplayTags",
+      "Setm_GameplayTags": "Set m_GameplayTags"
+    },
+    "GameplayAttributeData": {
+      "GameplayAttributeData": "Create GameplayAttributeData",
+      "Getm_BaseValue": "Get m_BaseValue",
+      "Setm_BaseValue": "Set m_BaseValue",
+      "Getm_CurrentValue": "Get m_CurrentValue",
+      "Setm_CurrentValue": "Set m_CurrentValue"
+    },
+    "AttributeSet": {
+      "AttributeSet": "Create AttributeSet"
+    },
+    "GameplayAttribute": {
+      "GameplayAttribute": "Create GameplayAttribute",
+      "Getm_AttributeName": "Get m_AttributeName",
+      "Setm_AttributeName": "Set m_AttributeName",
+      "Getm_AttributeOwner": "Get m_AttributeOwner",
+      "Setm_AttributeOwner": "Set m_AttributeOwner"
+    },
+    "AttributeSetDefine": {
+      "AttributeSetDefine": "Create AttributeSetDefine",
+      "Getm_Attributes": "Get m_Attributes",
+      "Setm_Attributes": "Set m_Attributes"
+    },
+    "AttributeMetaData": {
+      "AttributeMetaData": "Create AttributeMetaData",
+      "Getm_BaseValue": "Get m_BaseValue",
+      "Setm_BaseValue": "Set m_BaseValue",
+      "Getm_MinValue": "Get m_MinValue",
+      "Setm_MinValue": "Set m_MinValue",
+      "Getm_MaxValue": "Get m_MaxValue",
+      "Setm_MaxValue": "Set m_MaxValue",
+      "Getm_CanStack": "Get m_CanStack",
+      "Setm_CanStack": "Set m_CanStack"
+    },
+    "GameplayAbilitySpecHandle": {
+      "GameplayAbilitySpecHandle": "Create GameplayAbilitySpecHandle"
+    },
+    "AbilitySystemComponent": {
+      "AbilitySystemComponent": "Create AbilitySystemComponent",
+      "GiveAbility": "GiveAbility",
+      "CancelAbility": "CancelAbility",
+      "GiveAbilityAndActivateOnce": "GiveAbilityAndActivateOnce",
+      "TryActivateAbility": "TryActivateAbility",
+      "Getm_Owner": "Get m_Owner",
+      "Setm_Owner": "Set m_Owner",
+      "Getm_Avatar": "Get m_Avatar",
+      "Setm_Avatar": "Set m_Avatar",
+      "Getm_Type": "Get m_Type",
+      "Setm_Type": "Set m_Type",
+      "Getm_ActivatableAbilities": "Get m_ActivatableAbilities",
+      "Setm_ActivatableAbilities": "Set m_ActivatableAbilities",
+      "Getm_SpawnedAttributes": "Get m_SpawnedAttributes",
+      "Setm_SpawnedAttributes": "Set m_SpawnedAttributes",
+      "Getm_ActiveGameplayEffects": "Get m_ActiveGameplayEffects",
+      "Setm_ActiveGameplayEffects": "Set m_ActiveGameplayEffects"
+    },
+    "ActiveGameplayEffectHandle": {
+      "ActiveGameplayEffectHandle": "Create ActiveGameplayEffectHandle",
+      "Getm_Handle": "Get m_Handle",
+      "Setm_Handle": "Set m_Handle",
+      "Getm_bPassedFiltersAndWasExecuted": "Get m_bPassedFiltersAndWasExecuted",
+      "Setm_bPassedFiltersAndWasExecuted": "Set m_bPassedFiltersAndWasExecuted"
+    },
+    "AbilitySystemComponentType": {
+      "AbilitySystemComponentType": "Create AbilitySystemComponentType",
+      "Getm_Attributes": "Get m_Attributes",
+      "Setm_Attributes": "Set m_Attributes",
+      "Getm_DefaultAbilities": "Get m_DefaultAbilities",
+      "Setm_DefaultAbilities": "Set m_DefaultAbilities",
+      "Getm_StartupTags": "Get m_StartupTags",
+      "Setm_StartupTags": "Set m_StartupTags",
+      "Getm_StartupEffects": "Get m_StartupEffects",
+      "Setm_StartupEffects": "Set m_StartupEffects"
+    },
+    "GameplayAbilityDefine": {
+      "GameplayAbilityDefine": "Create GameplayAbilityDefine",
+      "Getm_AbilityTags": "Get m_AbilityTags",
+      "Setm_AbilityTags": "Set m_AbilityTags",
+      "Getm_InstancingPolicy": "Get m_InstancingPolicy",
+      "Setm_InstancingPolicy": "Set m_InstancingPolicy",
+      "Getm_bRetriggerInstancedAbility": "Get m_bRetriggerInstancedAbility",
+      "Setm_bRetriggerInstancedAbility": "Set m_bRetriggerInstancedAbility",
+      "Getm_CostGameplayEffectClass": "Get m_CostGameplayEffectClass",
+      "Setm_CostGameplayEffectClass": "Set m_CostGameplayEffectClass",
+      "Getm_AbilityTriggers": "Get m_AbilityTriggers",
+      "Setm_AbilityTriggers": "Set m_AbilityTriggers",
+      "Getm_CooldownGameplayEffectClass": "Get m_CooldownGameplayEffectClass",
+      "Setm_CooldownGameplayEffectClass": "Set m_CooldownGameplayEffectClass",
+      "Getm_CancelAbilitiesWithTag": "Get m_CancelAbilitiesWithTag",
+      "Setm_CancelAbilitiesWithTag": "Set m_CancelAbilitiesWithTag",
+      "Getm_BlockAbilitiesWithTag": "Get m_BlockAbilitiesWithTag",
+      "Setm_BlockAbilitiesWithTag": "Set m_BlockAbilitiesWithTag",
+      "Getm_ActivationOwnedTags": "Get m_ActivationOwnedTags",
+      "Setm_ActivationOwnedTags": "Set m_ActivationOwnedTags",
+      "Getm_ActivationRequiredTags": "Get m_ActivationRequiredTags",
+      "Setm_ActivationRequiredTags": "Set m_ActivationRequiredTags",
+      "Getm_ActivationBlockedTags": "Get m_ActivationBlockedTags",
+      "Setm_ActivationBlockedTags": "Set m_ActivationBlockedTags",
+      "Getm_SourceRequiredTags": "Get m_SourceRequiredTags",
+      "Setm_SourceRequiredTags": "Set m_SourceRequiredTags",
+      "Getm_SourceBlockedTags": "Get m_SourceBlockedTags",
+      "Setm_SourceBlockedTags": "Set m_SourceBlockedTags",
+      "Getm_TargetRequiredTags": "Get m_TargetRequiredTags",
+      "Setm_TargetRequiredTags": "Set m_TargetRequiredTags",
+      "Getm_TargetBlockedTags": "Get m_TargetBlockedTags",
+      "Setm_TargetBlockedTags": "Set m_TargetBlockedTags"
+    },
+    "GameplayAbility": {
+      "GameplayAbility": "Create GameplayAbility",
+      "K2_CancelAbility": "K2_CancelAbility",
+      "K2_CommitAbility": "K2_CommitAbility",
+      "K2_CommitAbilityCooldown": "K2_CommitAbilityCooldown",
+      "K2_CommitAbilityCost": "K2_CommitAbilityCost",
+      "K2_CheckAbilityCooldown": "K2_CheckAbilityCooldown",
+      "K2_CheckAbilityCost": "K2_CheckAbilityCost",
+      "K2_EndAbility": "K2_EndAbility",
+      "K2_EndAbilityLocally": "K2_EndAbilityLocally",
+      "Getm_Define": "Get m_Define",
+      "Setm_Define": "Set m_Define",
+      "Getm_OnK2CanActivateAbility": "Get m_OnK2CanActivateAbility",
+      "Setm_OnK2CanActivateAbility": "Set m_OnK2CanActivateAbility",
+      "Getm_OnK2ActivateAbility": "Get m_OnK2ActivateAbility",
+      "Setm_OnK2ActivateAbility": "Set m_OnK2ActivateAbility",
+      "Getm_OnK2ActivateAbilityFromEvent": "Get m_OnK2ActivateAbilityFromEvent",
+      "Setm_OnK2ActivateAbilityFromEvent": "Set m_OnK2ActivateAbilityFromEvent",
+      "Getm_OnK2CommitExecute": "Get m_OnK2CommitExecute",
+      "Setm_OnK2CommitExecute": "Set m_OnK2CommitExecute",
+      "Getm_OnK2OnEndAbility": "Get m_OnK2OnEndAbility",
+      "Setm_OnK2OnEndAbility": "Set m_OnK2OnEndAbility"
+    },
+    "GameplayAbilityActorInfo": {
+      "GameplayAbilityActorInfo": "Create GameplayAbilityActorInfo"
+    },
+    "GameplayAbilityActivationInfo": {
+      "GameplayAbilityActivationInfo": "Create GameplayAbilityActivationInfo",
+      "Getm_ActivationMode": "Get m_ActivationMode",
+      "Setm_ActivationMode": "Set m_ActivationMode"
+    },
+    "GameplayEventData": {
+      "GameplayEventData": "Create GameplayEventData",
+      "Getm_EventTag": "Get m_EventTag",
+      "Setm_EventTag": "Set m_EventTag",
+      "Getm_Instigator": "Get m_Instigator",
+      "Setm_Instigator": "Set m_Instigator",
+      "Getm_Target": "Get m_Target",
+      "Setm_Target": "Set m_Target",
+      "Getm_OptionalObject": "Get m_OptionalObject",
+      "Setm_OptionalObject": "Set m_OptionalObject",
+      "Getm_OptionalObject2": "Get m_OptionalObject2",
+      "Setm_OptionalObject2": "Set m_OptionalObject2",
+      "Getm_InstigatorTags": "Get m_InstigatorTags",
+      "Setm_InstigatorTags": "Set m_InstigatorTags",
+      "Getm_TargetTags": "Get m_TargetTags",
+      "Setm_TargetTags": "Set m_TargetTags",
+      "Getm_EventMagnitude": "Get m_EventMagnitude",
+      "Setm_EventMagnitude": "Set m_EventMagnitude",
+      "Getm_TargetData": "Get m_TargetData",
+      "Setm_TargetData": "Set m_TargetData"
+    },
+    "GameplayAbilityTargetDataHandle": {
+      "GameplayAbilityTargetDataHandle": "Create GameplayAbilityTargetDataHandle"
+    },
+    "GameplayAbilityTargetData": {
+      "GameplayAbilityTargetData": "Create GameplayAbilityTargetData"
+    },
+    "GameplayAbilitySpec": {
+      "GameplayAbilitySpec": "Create GameplayAbilitySpec",
+      "Getm_GameplayEffectHandle": "Get m_GameplayEffectHandle",
+      "Setm_GameplayEffectHandle": "Set m_GameplayEffectHandle"
+    },
+    "GameplayEffectComponent": {
+      "GameplayEffectComponent": "Create GameplayEffectComponent"
+    },
+    "ActiveGameplayEffectsContainer": {
+      "ActiveGameplayEffectsContainer": "Create ActiveGameplayEffectsContainer"
+    },
+    "GameplayAbilitySpecDef": {
+      "GameplayAbilitySpecDef": "Create GameplayAbilitySpecDef",
+      "Getm_Ability": "Get m_Ability",
+      "Setm_Ability": "Set m_Ability",
+      "Getm_Level": "Get m_Level",
+      "Setm_Level": "Set m_Level",
+      "Getm_RemovalPolicy": "Get m_RemovalPolicy",
+      "Setm_RemovalPolicy": "Set m_RemovalPolicy"
+    },
+    "GameplayCueNotify_Static": {
+      "GameplayCueNotify_Static": "Create GameplayCueNotify_Static"
+    },
+    "GameplayCueNotify_Actor": {
+      "GameplayCueNotify_Actor": "Create GameplayCueNotify_Actor"
+    },
+    "GameplayAbilitySystem": {
+      "GameplayAbilitySystem": "Create GameplayAbilitySystem",
+      "RegisterAbilityCreator": "RegisterAbilityCreator"
+    },
+    "QueryVolume": {
+      "QueryVolume": "Create QueryVolume",
+      "Getm_type": "Get m_type",
+      "Setm_type": "Set m_type",
+      "Getm_flags": "Get m_flags",
+      "Setm_flags": "Set m_flags"
+    },
+    "QuerySphere": {
+      "QuerySphere": "QuerySphere",
+      "Getm_location": "Get m_location",
+      "Setm_location": "Set m_location",
+      "Getm_radius": "Get m_radius",
+      "Setm_radius": "Set m_radius"
+    },
+    "XkeinTools": {
+      "XkeinTools": "Create XkeinTools",
+      "FindFirstTarget": "FindFirstTarget",
+      "ForeachTarget": "ForeachTarget",
+      "IsQueryTarget": "IsQueryTarget",
+      "FireWeaponToTarget": "FireWeaponToTarget",
+      "FireWeaponToPosition": "FireWeaponToPosition",
+      "LaunchWeaponToTarget": "LaunchWeaponToTarget",
+      "LaunchWeaponToPosition": "LaunchWeaponToPosition"
+    },
     "EPhysicShapeType": {
       "GetEPhysicShapeType": "Get EPhysicShapeType",
       "Auto": "Auto",
@@ -930,6 +1204,55 @@
       "Box": "Box",
       "Capsule": "Capsule",
       "Cylinder": "Cylinder"
+    },
+    "EGameplayAbilityInstancingPolicy": {
+      "GetEGameplayAbilityInstancingPolicy": "Get EGameplayAbilityInstancingPolicy",
+      "InstancedPerActor": "InstancedPerActor",
+      "InstancedPerExecution": "InstancedPerExecution"
+    },
+    "EGameplayAbilityActivationMode": {
+      "GetEGameplayAbilityActivationMode": "Get EGameplayAbilityActivationMode",
+      "Authority": "Authority",
+      "NonAuthority": "NonAuthority",
+      "Predicting": "Predicting",
+      "Confirmed": "Confirmed",
+      "Rejected": "Rejected"
+    },
+    "EGameplayAbilityTriggerSource": {
+      "GetEGameplayAbilityTriggerSource": "Get EGameplayAbilityTriggerSource",
+      "GameplayEvent": "GameplayEvent",
+      "OwnedTagAdded": "OwnedTagAdded",
+      "OwnedTagPresent": "OwnedTagPresent"
+    },
+    "EGameplayEffectGrantedAbilityRemovePolicy": {
+      "GetEGameplayEffectGrantedAbilityRemovePolicy": "Get EGameplayEffectGrantedAbilityRemovePolicy",
+      "CancelAbilityImmediately": "CancelAbilityImmediately",
+      "RemoveAbilityOnEnd": "RemoveAbilityOnEnd",
+      "DoNothing": "DoNothing"
+    },
+    "EGameplayAbilityNetExecutionPolicy": {
+      "GetEGameplayAbilityNetExecutionPolicy": "Get EGameplayAbilityNetExecutionPolicy",
+      "LocalOnly": "LocalOnly",
+      "ServerOnly": "ServerOnly",
+      "LocalPredicted": "LocalPredicted",
+      "ServerInitiated": "ServerInitiated"
+    },
+    "QueryFlags": {
+      "GetQueryFlags": "Get QueryFlags",
+      "Infantry": "Infantry",
+      "Unit": "Unit",
+      "Building": "Building",
+      "Aircraft": "Aircraft",
+      "Terrain": "Terrain",
+      "Bullet": "Bullet",
+      "Techno": "Techno",
+      "Object": "Object",
+      "NonTechnoObject": "NonTechnoObject",
+      "All": "All"
+    },
+    "QueryType": {
+      "GetQueryType": "Get QueryType",
+      "Sphere": "Sphere"
     },
     "IniReader": {
       "IniReader": "IniReader",
@@ -1171,6 +1494,14 @@
       "Getm_pCoords": "Get m_pCoords",
       "Setm_pCoords": "Set m_pCoords",
       "OnYrBulletDetonateEvent": "On YrBulletDetonateEvent"
+    },
+    "YrBulletSetTargetEvent": {
+      "YrBulletSetTargetEvent": "Create YrBulletSetTargetEvent",
+      "Getm_pBullet": "Get m_pBullet",
+      "Setm_pBullet": "Set m_pBullet",
+      "Getm_pTarget": "Get m_pTarget",
+      "Setm_pTarget": "Set m_pTarget",
+      "OnYrBulletSetTargetEvent": "On YrBulletSetTargetEvent"
     },
     "YrBulletTypeCtorEvent": {
       "YrBulletTypeCtorEvent": "Create YrBulletTypeCtorEvent",
@@ -1854,6 +2185,38 @@
       "YrHookOverrideReturn<FireError>": "Create YrHookOverrideReturn<FireError>",
       "OverrideReturn": "OverrideReturn"
     },
+    "YrTechnoSetTargetEvent": {
+      "YrTechnoSetTargetEvent": "Create YrTechnoSetTargetEvent",
+      "Getm_pTechno": "Get m_pTechno",
+      "Setm_pTechno": "Set m_pTechno",
+      "Getm_pTarget": "Get m_pTarget",
+      "Setm_pTarget": "Set m_pTarget",
+      "OnYrTechnoSetTargetEvent": "On YrTechnoSetTargetEvent"
+    },
+    "YrTechnoDestroyedEvent": {
+      "YrTechnoDestroyedEvent": "Create YrTechnoDestroyedEvent",
+      "Getm_pTechno": "Get m_pTechno",
+      "Setm_pTechno": "Set m_pTechno",
+      "Getm_killer": "Get m_killer",
+      "Setm_killer": "Set m_killer",
+      "OnYrTechnoDestroyedEvent": "On YrTechnoDestroyedEvent"
+    },
+    "YrTechnoAddPassengerEvent": {
+      "YrTechnoAddPassengerEvent": "Create YrTechnoAddPassengerEvent",
+      "Getm_pTechno": "Get m_pTechno",
+      "Setm_pTechno": "Set m_pTechno",
+      "Getm_passenger": "Get m_passenger",
+      "Setm_passenger": "Set m_passenger",
+      "OnYrTechnoAddPassengerEvent": "On YrTechnoAddPassengerEvent"
+    },
+    "YrTechnoRemovePassengerEvent": {
+      "YrTechnoRemovePassengerEvent": "Create YrTechnoRemovePassengerEvent",
+      "Getm_pTechno": "Get m_pTechno",
+      "Setm_pTechno": "Set m_pTechno",
+      "Getm_passenger": "Get m_passenger",
+      "Setm_passenger": "Set m_passenger",
+      "OnYrTechnoRemovePassengerEvent": "On YrTechnoRemovePassengerEvent"
+    },
     "YrTechnoTypeCtorEvent": {
       "YrTechnoTypeCtorEvent": "Create YrTechnoTypeCtorEvent",
       "Getm_pTechnoType": "Get m_pTechnoType",
@@ -2220,6 +2583,31 @@
       "YrAfterSetCooperativeLevelEvent": "Create YrAfterSetCooperativeLevelEvent",
       "OnYrAfterSetCooperativeLevelEvent": "On YrAfterSetCooperativeLevelEvent"
     },
+    "VariantEventPack": {
+      "VariantEventPack": "VariantEventPack",
+      "SetData": "SetData",
+      "GetData": "GetData"
+    },
+    "EventPack<unsigned char[99]>": {
+      "EventPack<unsigned char[99]>": "Create EventPack<unsigned char[99]>",
+      "Getm_Type": "Get m_Type",
+      "Setm_Type": "Set m_Type",
+      "Getm_IsExecuted": "Get m_IsExecuted",
+      "Setm_IsExecuted": "Set m_IsExecuted",
+      "Getm_HouseIndex": "Get m_HouseIndex",
+      "Setm_HouseIndex": "Set m_HouseIndex",
+      "Getm_Frame": "Get m_Frame",
+      "Setm_Frame": "Set m_Frame",
+      "Getm_CustomType": "Get m_CustomType",
+      "Setm_CustomType": "Set m_CustomType",
+      "Getm_Size": "Get m_Size",
+      "Setm_Size": "Set m_Size"
+    },
+    "NetPackDispatch": {
+      "NetPackDispatch": "Create NetPackDispatch",
+      "RegisterVariantEvent": "RegisterVariantEvent",
+      "AddVariantEvent": "AddVariantEvent"
+    },
     "Serialization": {
       "Serialization": "Create Serialization",
       "IsSerializing": "IsSerializing",
@@ -2229,6 +2617,10 @@
       "LoadKey": "LoadKey",
       "SaveKey": "SaveKey",
       "RegisterStepHandler": "RegisterStepHandler"
+    },
+    "YrHelper": {
+      "YrHelper": "Create YrHelper",
+      "GetPassengersOwner": "GetPassengersOwner"
     },
     "ESerializationStep": {
       "GetESerializationStep": "Get ESerializationStep",
@@ -2961,10 +3353,6 @@
       "Setm_CurrentTargets": "Set m_CurrentTargets",
       "Getm___CurrentTargets": "Get m___CurrentTargets",
       "Setm___CurrentTargets": "Set m___CurrentTargets",
-      "Getm_AttackedTargets": "Get m_AttackedTargets",
-      "Setm_AttackedTargets": "Set m_AttackedTargets",
-      "Getm___AttackedTargets": "Get m___AttackedTargets",
-      "Setm___AttackedTargets": "Set m___AttackedTargets",
       "Getm_Audio3": "Get m_Audio3",
       "Setm_Audio3": "Set m_Audio3",
       "Getm___Audio3": "Get m___Audio3",
