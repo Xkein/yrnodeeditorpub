@@ -242,7 +242,7 @@
     "YrAfterCreateWindoweEvent": "YrAfterCreateWindoweEvent",
     "YrAfterSetCooperativeLevelEvent": "YrAfterSetCooperativeLevelEvent",
     "VariantEventPack": "VariantEventPack",
-    "EventPack<unsigned char[99]>": "EventPack<unsigned char[99]>",
+    "EventPack<unsigned char_99_>": "EventPack<unsigned char[99]>",
     "NetPackDispatch": "NetPackDispatch",
     "Serialization": "Serialization",
     "YrHelper": "YrHelper",
@@ -2588,8 +2588,8 @@
       "SetData": "SetData",
       "GetData": "GetData"
     },
-    "EventPack<unsigned char[99]>": {
-      "EventPack<unsigned char[99]>": "Create EventPack<unsigned char[99]>",
+    "EventPack<unsigned char_99_>": {
+      "EventPack<unsigned char_99_>": "Create EventPack<unsigned char[99]>",
       "Getm_Type": "Get m_Type",
       "Setm_Type": "Set m_Type",
       "Getm_IsExecuted": "Get m_IsExecuted",
