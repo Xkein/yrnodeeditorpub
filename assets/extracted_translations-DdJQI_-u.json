@@ -10,17 +10,19 @@
     "WwiseSoundBankRef": "WwiseSoundBankRef",
     "AudioSystem": "AudioSystem",
     "AudioComponent": "AudioComponent",
+    "Input": "Input",
     "PhysicsTypeComponent": "PhysicsTypeComponent",
     "PhysicsComponent": "PhysicsComponent",
     "PhysicsCollisionAddAndPersistResult": "PhysicsCollisionAddAndPersistResult",
     "PhysicsCollisionRemoveResult": "PhysicsCollisionRemoveResult",
+    "ScriptFunctionBase": "ScriptFunctionBase",
+    "ScriptFunctionRegister": "ScriptFunctionRegister",
     "JsCppHelper": "JsCppHelper",
     "JsEventOnCtor": "JsEventOnCtor",
     "JsEventOnDtor": "JsEventOnDtor",
     "JsGameEvents": "JsGameEvents",
     "JsPhysicsEvents": "JsPhysicsEvents",
     "JsEvents": "JsEvents",
-    "Input": "Input",
     "GameplayTag": "GameplayTag",
     "GameplayTagContainer": "GameplayTagContainer",
     "GameplayAttributeData": "GameplayAttributeData",
@@ -45,6 +47,8 @@
     "GameplayAbilitySpecDef": "GameplayAbilitySpecDef",
     "GameplayCueNotify_Static": "GameplayCueNotify_Static",
     "GameplayCueNotify_Actor": "GameplayCueNotify_Actor",
+    "GameplayAbilityCreator": "GameplayAbilityCreator",
+    "ScriptFunction<GameplayAbility * (AbilitySystemComponent * _0)>": "ScriptFunction<GameplayAbility * (AbilitySystemComponent * _0)>",
     "GameplayAbilitySystem": "GameplayAbilitySystem",
     "QueryVolume": "QueryVolume",
     "QuerySphere": "QuerySphere",
@@ -58,6 +62,7 @@
     "QueryFlags": "QueryFlags",
     "QueryType": "QueryType",
     "YrExtCore": "YrExtCore",
+    "StringName": "StringName",
     "IniReader": "IniReader",
     "IniComponentLoader": "IniComponentLoader",
     "YrHookOverrideReturn<void>": "YrHookOverrideReturn<void>",
@@ -814,6 +819,22 @@
       "Getm_akGameObjId": "Get m_akGameObjId",
       "Setm_akGameObjId": "Set m_akGameObjId"
     },
+    "Input": {
+      "Input": "Create Input",
+      "IsKeyDown": "IsKeyDown",
+      "IsKeyUp": "IsKeyUp",
+      "IsKeyHeld": "IsKeyHeld",
+      "Gets_gMap": "Get s_gMap",
+      "Sets_gMap": "Set s_gMap",
+      "Gets_gMouseId": "Get s_gMouseId",
+      "Sets_gMouseId": "Set s_gMouseId",
+      "Gets_gKeyboardId": "Get s_gKeyboardId",
+      "Sets_gKeyboardId": "Set s_gKeyboardId",
+      "Gets_gJoystickId": "Get s_gJoystickId",
+      "Sets_gJoystickId": "Set s_gJoystickId",
+      "Gets_gTouchId": "Get s_gTouchId",
+      "Sets_gTouchId": "Set s_gTouchId"
+    },
     "PhysicsTypeComponent": {
       "PhysicsTypeComponent": "Create PhysicsTypeComponent",
       "Getm_enable": "Get m_enable",
@@ -857,6 +878,17 @@
       "Setm_com1": "Set m_com1",
       "Getm_com2": "Get m_com2",
       "Setm_com2": "Set m_com2"
+    },
+    "ScriptFunctionBase": {
+      "ScriptFunctionBase": "Create ScriptFunctionBase",
+      "Getm_name": "Get m_name",
+      "Setm_name": "Set m_name"
+    },
+    "ScriptFunctionRegister": {
+      "ScriptFunctionRegister": "Create ScriptFunctionRegister",
+      "RegisterFunction": "RegisterFunction",
+      "RegisterLoader": "RegisterLoader",
+      "GetFunction": "GetFunction"
     },
     "JsCppHelper": {
       "JsCppHelper": "Create JsCppHelper",
@@ -953,22 +985,6 @@
       "Gets_onDtor": "Get s_onDtor",
       "Sets_onDtor": "Set s_onDtor"
     },
-    "Input": {
-      "Input": "Create Input",
-      "IsKeyDown": "IsKeyDown",
-      "IsKeyUp": "IsKeyUp",
-      "IsKeyHeld": "IsKeyHeld",
-      "Gets_gMap": "Get s_gMap",
-      "Sets_gMap": "Set s_gMap",
-      "Gets_gMouseId": "Get s_gMouseId",
-      "Sets_gMouseId": "Set s_gMouseId",
-      "Gets_gKeyboardId": "Get s_gKeyboardId",
-      "Sets_gKeyboardId": "Set s_gKeyboardId",
-      "Gets_gJoystickId": "Get s_gJoystickId",
-      "Sets_gJoystickId": "Set s_gJoystickId",
-      "Gets_gTouchId": "Get s_gTouchId",
-      "Sets_gTouchId": "Set s_gTouchId"
-    },
     "GameplayTag": {
       "GameplayTag": "Create GameplayTag",
       "Getm_TagName": "Get m_TagName",
@@ -1054,6 +1070,8 @@
     },
     "GameplayAbilityDefine": {
       "GameplayAbilityDefine": "Create GameplayAbilityDefine",
+      "Getm_AbilityCreator": "Get m_AbilityCreator",
+      "Setm_AbilityCreator": "Set m_AbilityCreator",
       "Getm_AbilityTags": "Get m_AbilityTags",
       "Setm_AbilityTags": "Set m_AbilityTags",
       "Getm_InstancingPolicy": "Get m_InstancingPolicy",
@@ -1169,9 +1187,15 @@
     "GameplayCueNotify_Actor": {
       "GameplayCueNotify_Actor": "Create GameplayCueNotify_Actor"
     },
+    "GameplayAbilityCreator": {
+      "GameplayAbilityCreator": "Create GameplayAbilityCreator"
+    },
+    "ScriptFunction<GameplayAbility * (AbilitySystemComponent * _0)>": {
+      "ScriptFunction<GameplayAbility * (AbilitySystemComponent * _0)>": "Create ScriptFunction<GameplayAbility * (AbilitySystemComponent * _0)>",
+      "ScriptFunction": "ScriptFunction"
+    },
     "GameplayAbilitySystem": {
-      "GameplayAbilitySystem": "Create GameplayAbilitySystem",
-      "RegisterAbilityCreator": "RegisterAbilityCreator"
+      "GameplayAbilitySystem": "Create GameplayAbilitySystem"
     },
     "QueryVolume": {
       "QueryVolume": "Create QueryVolume",
@@ -1253,6 +1277,12 @@
     "QueryType": {
       "GetQueryType": "Get QueryType",
       "Sphere": "Sphere"
+    },
+    "StringName": {
+      "StringName": "StringName",
+      "c_str": "c_str",
+      "GetId": "GetId",
+      "IsEmpty": "IsEmpty"
     },
     "IniReader": {
       "IniReader": "IniReader",
@@ -3353,6 +3383,10 @@
       "Setm_CurrentTargets": "Set m_CurrentTargets",
       "Getm___CurrentTargets": "Get m___CurrentTargets",
       "Setm___CurrentTargets": "Set m___CurrentTargets",
+      "Getm_AttackedTargets": "Get m_AttackedTargets",
+      "Setm_AttackedTargets": "Set m_AttackedTargets",
+      "Getm___AttackedTargets": "Get m___AttackedTargets",
+      "Setm___AttackedTargets": "Set m___AttackedTargets",
       "Getm_Audio3": "Get m_Audio3",
       "Setm_Audio3": "Set m_Audio3",
       "Getm___Audio3": "Get m___Audio3",
